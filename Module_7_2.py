@@ -5,13 +5,14 @@ def custom_write(file_name, strings):    #file_name - название файл�
     strings_positions = {}
     nstr = 1
     for i in strings:
+        key = f'({nstr}, {file.tell()})'
         file.write(i)
         file.write('\n')
         # print(nstr)
         # print(file.tell())
         # print(i)
         # print(f"(({nstr}, {file.tell()}) '{i}')")
-        key = f'({nstr}, {file.tell()})'
+
         strings_positions.update({key: i})    #, nsrt
         # strings_positions[file.tell] = i
         nstr += 1
